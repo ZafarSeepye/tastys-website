@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Tasty's Take Aways - main stylesheet
+   Temporary styles for Step 1. Replaced by the design system in Step 2.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.setup-check {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.setup-check__tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffc20e;
+}
+
+.setup-check__title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  color: #ffc20e;
+}
+
+.setup-check__title span {
+  display: block;
+  font-size: 0.4em;
+  color: #ffffff;
+  background: #e2231a;
+  padding: 0.2em 0.8em;
+  border-radius: 999px;
+  justify-self: center;
+}
+
+.setup-check__text {
+  color: #b5b5b5;
+}
+
+.setup-check__status {
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  color: #ff6b6b;
+}
+
+.setup-check__status.is-ok {
+  color: #4ade80;
+}

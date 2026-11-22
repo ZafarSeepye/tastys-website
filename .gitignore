@@ -1,0 +1,24 @@
+# Dependencies (reinstalled with npm install)
+node_modules/
+
+# Build output (recreated with npm run build)
+dist/
+
+# Secrets and environment files - NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+*.log
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Files the Claude app saves into this folder (not part of the site)
+Claude outputs/

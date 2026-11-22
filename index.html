@@ -9,13 +9,121 @@
       content="Tasty's Take Aways in Mashishing: chips, burgers, rolls, kotas, toasted sandwiches, curries and more. 36 Joubert St, next to Dawsons Hardware."
     />
     <meta name="theme-color" content="#0b0b0b" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
   <body>
-    <main class="setup-check">
-      <p class="setup-check__tag">Step 1 complete</p>
-      <h1 class="setup-check__title">Tasty's <span>Take Aways</span></h1>
-      <p class="setup-check__text">Project setup is working. Next: brand &amp; design system.</p>
-      <p class="setup-check__status" id="js-status">JavaScript: not loaded</p>
+    <!-- ======================================================================
+         TEMPORARY step 2 preview: shows the brand and design system.
+         Replaced by the real header + hero in step 3.
+         ====================================================================== -->
+    <main class="preview container">
+      <header class="preview__intro">
+        <img
+          class="preview__logo"
+          src="/src/assets/logo/tastys-logo.webp"
+          alt="Tasty's Take Aways logo"
+          width="1386"
+          height="764"
+        />
+        <p class="brush preview__tagline">Delicious flavours <span class="swoosh">made for you!</span></p>
+        <p class="eyebrow">Step 2 · Brand &amp; design system</p>
+      </header>
+
+      <!-- Colours -->
+      <section class="preview__block">
+        <h2 class="preview__title">Colours</h2>
+        <ul class="swatches">
+          <li class="swatch" style="--swatch: var(--color-red)"><span>Tasty's red</span><code>#d90f0c</code></li>
+          <li class="swatch" style="--swatch: var(--color-yellow)"><span>Tasty's yellow</span><code>#fbc40c</code></li>
+          <li class="swatch" style="--swatch: var(--color-flame)"><span>Flame</span><code>#ff7a00</code></li>
+          <li class="swatch" style="--swatch: var(--color-bg)"><span>Black</span><code>#0b0b0b</code></li>
+          <li class="swatch" style="--swatch: var(--color-surface)"><span>Surface</span><code>#1a1715</code></li>
+          <li class="swatch" style="--swatch: var(--color-text)"><span>Warm white</span><code>#fff8ec</code></li>
+        </ul>
+      </section>
+
+      <!-- Typography -->
+      <section class="preview__block">
+        <h2 class="preview__title">Type</h2>
+        <div class="type-demo">
+          <h1>Great food. <span class="text-yellow">Great vibes.</span></h1>
+          <h2>Made with passion!</h2>
+          <h3>Crumbed chicken burger</h3>
+          <p>
+            Body text uses <strong>Barlow</strong>. Headings use <strong>Barlow Condensed</strong>, bold and narrow like
+            the lettering on the Tasty's posters. Seasoned chips with your choice of tomato, mustard, BBQ, mayo,
+            peri mayo or chilli sauce.
+          </p>
+        </div>
+      </section>
+
+      <!-- Buttons + labels -->
+      <section class="preview__block">
+        <h2 class="preview__title">Buttons &amp; labels</h2>
+        <div class="preview__row">
+          <a class="btn btn--yellow" href="#">See the menu</a>
+          <a class="btn btn--red" href="#">Call 072 556 5736</a>
+          <a class="btn btn--whatsapp" href="#">WhatsApp us</a>
+          <a class="btn btn--ghost" href="#">Find us</a>
+        </div>
+        <div class="preview__row">
+          <span class="tag">Varies daily</span>
+          <span class="tag tag--red">Subject to availability</span>
+          <span class="brush brush--red">Hunger buster</span>
+        </div>
+      </section>
+
+      <!-- Menu pieces -->
+      <section class="preview__block">
+        <h2 class="preview__title">Menu pieces</h2>
+
+        <div class="chips" role="tablist" aria-label="Menu categories (preview)">
+          <button class="chip" role="tab" aria-selected="true">Burgers</button>
+          <button class="chip" role="tab" aria-selected="false">Chips</button>
+          <button class="chip" role="tab" aria-selected="false">Rolls</button>
+          <button class="chip" role="tab" aria-selected="false">Kotas</button>
+          <button class="chip" role="tab" aria-selected="false">Sandwiches</button>
+          <button class="chip" role="tab" aria-selected="false">Pizza</button>
+        </div>
+
+        <div class="preview__cards">
+          <article class="menu-card">
+            <div class="menu-card__media">
+              <span class="preview__photo">Photo in step 4</span>
+              <span class="price"><span class="price__currency">R</span>60</span>
+            </div>
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Beef cheese burger</h3>
+              <p class="price-extra">With chips <strong>R70</strong></p>
+              <p class="menu-card__desc">Add mushroom sauce for R8.</p>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card__media">
+              <span class="preview__photo">Photo in step 4</span>
+              <span class="price price--yellow"><span class="price__currency">R</span>45</span>
+            </div>
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Crumbed chicken burger</h3>
+              <p class="menu-card__desc">With chips on the side.</p>
+            </div>
+          </article>
+
+          <div class="preview__list">
+            <div class="menu-row">
+              <span class="menu-row__name">Regular chips</span><span class="menu-row__dots"></span><span class="menu-row__price">R25</span>
+            </div>
+            <div class="menu-row">
+              <span class="menu-row__name">Large chips</span><span class="menu-row__dots"></span><span class="menu-row__price">R40</span>
+            </div>
+            <div class="menu-row">
+              <span class="menu-row__name">Chips + wors</span><span class="menu-row__dots"></span><span class="menu-row__price">R45</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script type="module" src="/src/main.js"></script>

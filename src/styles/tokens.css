@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Tasty's Take Aways - Design tokens
+   Every colour, font, size and timing lives here, so the whole site can be
+   re-themed from one file. Colours are sampled from the Tasty's posters/logo.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand colours (from the logo) ---------- */
+  --color-red: #d90f0c;          /* logo oval red - backgrounds, big text only */
+  --color-red-deep: #a10a08;     /* pressed / shadow red */
+  --color-red-bright: #ff4136;   /* red for SMALL text on black (readable) */
+  --color-yellow: #fbc40c;       /* "Tasty's" lettering yellow */
+  --color-yellow-soft: #ffd94d;  /* hover yellow */
+  --color-yellow-deep: #d99e00;  /* yellow shadow / pressed */
+  --color-flame: #ff7a00;        /* the flame on the apostrophe */
+  --color-whatsapp: #25d366;
+
+  /* ---------- Backgrounds & surfaces ---------- */
+  --color-bg: #0b0b0b;
+  --color-bg-elevated: #141210;
+  --color-surface: #1a1715;
+  --color-surface-hover: #221e1b;
+  --color-border: rgba(255, 244, 230, 0.1);
+  --color-border-strong: rgba(255, 244, 230, 0.2);
+
+  /* ---------- Text ---------- */
+  --color-text: #fff8ec;         /* warm white, like the posters */
+  --color-text-muted: #cdc2b4;
+  --color-text-dim: #8f857b;
+  --color-on-yellow: #120d05;    /* text on yellow buttons/stickers */
+  --color-on-red: #ffffff;
+
+  /* ---------- Fonts ---------- */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  --font-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+
+  /* ---------- Type scale (fluid: phone -> desktop) ---------- */
+  --text-xs: 0.78rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: clamp(1.08rem, 1rem + 0.3vw, 1.2rem);
+  --text-xl: clamp(1.3rem, 1.15rem + 0.6vw, 1.6rem);
+  --text-2xl: clamp(1.7rem, 1.4rem + 1.2vw, 2.4rem);
+  --text-3xl: clamp(2.3rem, 1.8rem + 2.2vw, 3.6rem);
+  --text-4xl: clamp(3rem, 2.2rem + 4vw, 5.6rem);
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* ---------- Shape ---------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --line-thin: 1px;
+  --line-bold: 3px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-card: 0 18px 40px -18px rgba(0, 0, 0, 0.8);
+  --shadow-sticker: 3px 4px 0 rgba(0, 0, 0, 0.85);
+  --glow-yellow: 0 0 24px rgba(251, 196, 12, 0.35);
+  --glow-red: 0 0 28px rgba(217, 15, 12, 0.45);
+
+  /* ---------- Layout ---------- */
+  --container: 1180px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-h: 72px;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 500ms;
+}

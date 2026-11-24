@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Tasty's Take Aways - Header
+   See-through over the hero, turns solid black once you scroll.
+   The small logo only appears when scrolled (the hero already shows the big one).
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--header-h);
+  border-bottom: var(--line-thin) solid transparent;
+  transition:
+    background-color var(--duration-slow) var(--ease-out),
+    border-color var(--duration-slow) var(--ease-out);
+}
+
+.site-header.is-scrolled {
+  background: rgba(11, 11, 11, 0.86);
+  border-bottom-color: var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: 100%;
+}
+
+/* Small logo: hidden at the top, slides in when scrolled */
+.site-header__logo {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-8px) rotate(-4deg);
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-slow) var(--ease-pop),
+    visibility 0s linear var(--duration-base);
+}
+
+.site-header.is-scrolled .site-header__logo {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.site-header__logo img {
+  width: auto;
+  height: 48px;
+}
+
+/* ---------- Nav ---------- */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.site-nav__link {
+  position: relative;
+  padding-block: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+/* Yellow underline that grows on hover / when active */
+.site-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.site-nav__link:hover,
+.site-nav__link.is-active {
+  color: var(--color-yellow);
+}
+
+.site-nav__link:hover::after,
+.site-nav__link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Smaller "Call us" button for the header */
+.site-nav__call {
+  min-height: 42px;
+  padding: 0.5rem 1.1rem;
+  font-size: var(--text-base);
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 560px) {
+  .site-header__logo img {
+    height: 40px;
+  }
+
+  .site-nav {
+    gap: var(--space-4);
+  }
+
+  .site-nav__link {
+    font-size: var(--text-base);
+  }
+
+  /* Call button becomes a round phone icon */
+  .site-nav__call {
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  .site-nav__call-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}

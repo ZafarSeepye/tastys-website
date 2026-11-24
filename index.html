@@ -11,117 +11,95 @@
     <meta name="theme-color" content="#0b0b0b" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Lets the CSS hide the hero for a moment so the intro animation can play -->
+    <script>document.documentElement.classList.add('js');</script>
   </head>
   <body>
-    <!-- ======================================================================
-         TEMPORARY step 2 preview: shows the brand and design system.
-         Replaced by the real header + hero in step 3.
-         ====================================================================== -->
-    <main class="preview container">
-      <header class="preview__intro">
-        <img
-          class="preview__logo"
-          src="/src/assets/logo/tastys-logo.webp"
-          alt="Tasty's Take Aways logo"
-          width="1386"
-          height="764"
-        />
-        <p class="brush preview__tagline">Delicious flavours <span class="swoosh">made for you!</span></p>
-        <p class="eyebrow">Step 2 · Brand &amp; design system</p>
-      </header>
+    <a class="skip-link" href="#menu">Skip to the menu</a>
 
-      <!-- Colours -->
-      <section class="preview__block">
-        <h2 class="preview__title">Colours</h2>
-        <ul class="swatches">
-          <li class="swatch" style="--swatch: var(--color-red)"><span>Tasty's red</span><code>#d90f0c</code></li>
-          <li class="swatch" style="--swatch: var(--color-yellow)"><span>Tasty's yellow</span><code>#fbc40c</code></li>
-          <li class="swatch" style="--swatch: var(--color-flame)"><span>Flame</span><code>#ff7a00</code></li>
-          <li class="swatch" style="--swatch: var(--color-bg)"><span>Black</span><code>#0b0b0b</code></li>
-          <li class="swatch" style="--swatch: var(--color-surface)"><span>Surface</span><code>#1a1715</code></li>
-          <li class="swatch" style="--swatch: var(--color-text)"><span>Warm white</span><code>#fff8ec</code></li>
-        </ul>
-      </section>
+    <!-- ==================== Header ==================== -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__logo" href="#top" aria-label="Tasty's Take Aways, back to top">
+          <img src="/src/assets/logo/tastys-logo.webp" alt="" width="1386" height="764" />
+        </a>
 
-      <!-- Typography -->
-      <section class="preview__block">
-        <h2 class="preview__title">Type</h2>
-        <div class="type-demo">
-          <h1>Great food. <span class="text-yellow">Great vibes.</span></h1>
-          <h2>Made with passion!</h2>
-          <h3>Crumbed chicken burger</h3>
-          <p>
-            Body text uses <strong>Barlow</strong>. Headings use <strong>Barlow Condensed</strong>, bold and narrow like
-            the lettering on the Tasty's posters. Seasoned chips with your choice of tomato, mustard, BBQ, mayo,
-            peri mayo or chilli sauce.
+        <nav class="site-nav" aria-label="Main">
+          <a class="site-nav__link" href="#menu">Menu</a>
+          <a class="site-nav__link" href="#find-us">Find us</a>
+          <a class="btn btn--yellow site-nav__call" href="tel:+27725565736">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
+            <span class="site-nav__call-text">Call us</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ==================== Hero ==================== -->
+      <section class="hero" id="top" aria-label="Welcome">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__embers"></div>
+        </div>
+
+        <div class="container hero__inner">
+          <p class="eyebrow" data-hero-intro>36 Joubert St · Mashishing</p>
+
+          <!-- The logo is the page's main heading. Built from 2 layers so the flame can move. -->
+          <h1 class="hero__logo">
+            <span class="sr-only">Tasty's Take Aways</span>
+            <img
+              class="hero__logo-base"
+              src="/src/assets/logo/tastys-logo-base.webp"
+              alt=""
+              width="1386"
+              height="764"
+            />
+            <span class="hero__flame-wrap">
+              <img class="hero__flame" src="/src/assets/logo/tastys-flame.webp" alt="" width="134" height="179" />
+            </span>
+          </h1>
+
+          <p class="brush hero__tagline">Delicious flavours <span class="swoosh">made for you!</span></p>
+
+          <p class="hero__text" data-hero-intro>
+            Chips, burgers, rolls, kotas, toasted sandwiches, pizza and daily curries. Hot, fresh and
+            <strong>made with passion</strong>.
+          </p>
+
+          <div class="hero__actions" data-hero-intro>
+            <a class="btn btn--yellow" href="#menu">See the menu</a>
+            <a class="btn btn--ghost" href="tel:+27725565736">Call 072 556 5736</a>
+          </div>
+
+          <p class="hero__hours" data-hero-intro>
+            <span>Mon–Fri 09:00–17:00</span>
+            <span>Sat 09:00–15:00</span>
+            <span>Sun closed</span>
           </p>
         </div>
+
+        <a class="hero__scroll" href="#menu" aria-label="Scroll to the menu" data-hero-intro>
+          <span>Menu</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+        </a>
       </section>
 
-      <!-- Buttons + labels -->
-      <section class="preview__block">
-        <h2 class="preview__title">Buttons &amp; labels</h2>
-        <div class="preview__row">
-          <a class="btn btn--yellow" href="#">See the menu</a>
-          <a class="btn btn--red" href="#">Call 072 556 5736</a>
-          <a class="btn btn--whatsapp" href="#">WhatsApp us</a>
-          <a class="btn btn--ghost" href="#">Find us</a>
-        </div>
-        <div class="preview__row">
-          <span class="tag">Varies daily</span>
-          <span class="tag tag--red">Subject to availability</span>
-          <span class="brush brush--red">Hunger buster</span>
+      <!-- ==================== Menu (built in step 4) ==================== -->
+      <section class="section section--placeholder" id="menu" aria-labelledby="menu-title">
+        <div class="container section-head section-head--center">
+          <p class="eyebrow">What's cooking</p>
+          <h2 id="menu-title">Our menu</h2>
+          <p>Coming in step 4.</p>
         </div>
       </section>
 
-      <!-- Menu pieces -->
-      <section class="preview__block">
-        <h2 class="preview__title">Menu pieces</h2>
-
-        <div class="chips" role="tablist" aria-label="Menu categories (preview)">
-          <button class="chip" role="tab" aria-selected="true">Burgers</button>
-          <button class="chip" role="tab" aria-selected="false">Chips</button>
-          <button class="chip" role="tab" aria-selected="false">Rolls</button>
-          <button class="chip" role="tab" aria-selected="false">Kotas</button>
-          <button class="chip" role="tab" aria-selected="false">Sandwiches</button>
-          <button class="chip" role="tab" aria-selected="false">Pizza</button>
-        </div>
-
-        <div class="preview__cards">
-          <article class="menu-card">
-            <div class="menu-card__media">
-              <span class="preview__photo">Photo in step 4</span>
-              <span class="price"><span class="price__currency">R</span>60</span>
-            </div>
-            <div class="menu-card__body">
-              <h3 class="menu-card__name">Beef cheese burger</h3>
-              <p class="price-extra">With chips <strong>R70</strong></p>
-              <p class="menu-card__desc">Add mushroom sauce for R8.</p>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="menu-card__media">
-              <span class="preview__photo">Photo in step 4</span>
-              <span class="price price--yellow"><span class="price__currency">R</span>45</span>
-            </div>
-            <div class="menu-card__body">
-              <h3 class="menu-card__name">Crumbed chicken burger</h3>
-              <p class="menu-card__desc">With chips on the side.</p>
-            </div>
-          </article>
-
-          <div class="preview__list">
-            <div class="menu-row">
-              <span class="menu-row__name">Regular chips</span><span class="menu-row__dots"></span><span class="menu-row__price">R25</span>
-            </div>
-            <div class="menu-row">
-              <span class="menu-row__name">Large chips</span><span class="menu-row__dots"></span><span class="menu-row__price">R40</span>
-            </div>
-            <div class="menu-row">
-              <span class="menu-row__name">Chips + wors</span><span class="menu-row__dots"></span><span class="menu-row__price">R45</span>
-            </div>
-          </div>
+      <!-- ==================== Find us (built in step 5) ==================== -->
+      <section class="section section--placeholder" id="find-us" aria-labelledby="find-title">
+        <div class="container section-head section-head--center">
+          <p class="eyebrow">Come say hi</p>
+          <h2 id="find-title">Find us</h2>
+          <p>Coming in step 5.</p>
         </div>
       </section>
     </main>

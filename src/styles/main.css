@@ -7,6 +7,6 @@
 @import './tokens.css';
 @import './base.css';
 @import './components.css';
-
-/* Temporary: the step 2 design-system preview page (removed in step 3) */
-@import './preview.css';
+@import './sections.css';
+@import './header.css';
+@import './hero.css';

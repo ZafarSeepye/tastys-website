@@ -1,6 +1,6 @@
 /* ==========================================================================
    Tasty's Take Aways - Entry point
-   Loads the fonts and styles. Section scripts are added in later steps.
+   Loads the fonts and styles, then starts each section's script.
    ========================================================================== */
 
 // Fonts (self-hosted, no Google requests)
@@ -15,3 +15,9 @@ import '@fontsource/barlow/600.css';
 import '@fontsource/barlow/700.css';
 
 import './styles/main.css';
+
+import { initHeader } from './js/header.js';
+import { initHero } from './js/hero.js';
+
+initHeader();
+initHero();

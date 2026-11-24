@@ -20,7 +20,11 @@ import './styles/main.css';
 import { initHeader } from './js/header.js';
 import { initHero } from './js/hero.js';
 import { initMenu } from './js/menu.js';
+import { initOpenStatus } from './js/open-status.js';
+import { initFooter } from './js/footer.js';
 
 initHeader();
 initHero();
 initMenu();
+initOpenStatus();
+initFooter();

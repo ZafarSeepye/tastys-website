@@ -96,6 +96,13 @@
   gap: var(--space-3);
 }
 
+/* Open now badge + opening hours */
+.hero__status {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+}
+
 /* Opening hours, separated by dots */
 .hero__hours {
   display: flex;

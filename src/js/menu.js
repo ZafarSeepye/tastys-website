@@ -94,11 +94,6 @@ function categoryHtml(cat, index) {
         ${withPhoto.length ? `<div class="menu-cat__cards">${withPhoto.map(cardHtml).join('')}</div>` : ''}
         ${withoutPhoto.length ? `<ul class="menu-cat__list">${withoutPhoto.map(rowHtml).join('')}</ul>` : ''}
       </div>
-      ${cat.special ? `
-        <div class="menu-cat__cta">
-          <a class="btn btn--whatsapp" href="https://wa.me/27725565736" target="_blank" rel="noopener">WhatsApp: what's on today?</a>
-          <a class="btn btn--ghost" href="tel:+27725565736">Call 072 556 5736</a>
-        </div>` : ''}
     </section>`;
 }
 

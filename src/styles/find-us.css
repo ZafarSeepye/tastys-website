@@ -1,0 +1,223 @@
+/* ==========================================================================
+   Tasty's Take Aways - Find us section
+   Address, phone and opening hours cards next to a dark Google map.
+   ========================================================================== */
+
+.find-us {
+  padding-block: var(--space-9);
+  border-top: var(--line-thin) solid var(--color-border);
+}
+
+.find-us__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.find-us__info {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* ---------- Info cards ---------- */
+.info-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: var(--line-thin) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--duration-base) var(--ease-out);
+}
+
+.info-card:hover {
+  border-color: rgba(251, 196, 12, 0.35);
+}
+
+.info-card__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: var(--color-yellow);
+  background: rgba(251, 196, 12, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.info-card__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.info-card__body {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-2);
+}
+
+.info-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.info-card__title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.16em;
+  color: var(--color-text-dim);
+}
+
+.info-card__big {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-black);
+  font-style: italic;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.info-card__phone {
+  color: var(--color-yellow);
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.info-card__phone:hover {
+  color: var(--color-yellow-soft);
+}
+
+.info-card__btn {
+  margin-top: var(--space-2);
+}
+
+.info-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* ---------- Hours ---------- */
+.hours {
+  display: grid;
+  width: 100%;
+  margin-top: var(--space-1);
+}
+
+.hours__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+}
+
+.hours__row + .hours__row {
+  border-top: var(--line-thin) dashed var(--color-border);
+}
+
+.hours__row--closed span:last-child {
+  color: var(--color-red-bright);
+}
+
+/* Today */
+.hours__row.is-today {
+  color: var(--color-text);
+  background: rgba(251, 196, 12, 0.1);
+  border-color: transparent;
+  box-shadow: inset 3px 0 0 var(--color-yellow);
+}
+
+.hours__row.is-today + .hours__row {
+  border-top-color: transparent;
+}
+
+/* ---------- Map ---------- */
+.find-us__map {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--color-bg-elevated);
+  border: var(--line-thin) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.find-us__map::before {
+  content: 'Loading map…';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+
+.find-us__map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* turns Google's light map dark to match the site */
+  filter: invert(0.9) hue-rotate(180deg) saturate(0.8) contrast(0.95);
+}
+
+.find-us__map-link {
+  position: absolute;
+  left: var(--space-4);
+  bottom: var(--space-4);
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background: rgba(11, 11, 11, 0.85);
+  border: var(--line-thin) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  transition: color var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
+}
+
+.find-us__map-link:hover {
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+
+/* ---------- Tablet & phone ---------- */
+@media (max-width: 900px) {
+  .find-us__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .find-us__map {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-card {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+  }
+
+  .info-card__actions .btn {
+    flex: 1;
+  }
+}

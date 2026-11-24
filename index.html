@@ -68,11 +68,15 @@
             <a class="btn btn--ghost" href="tel:+27725565736">Call 072 556 5736</a>
           </div>
 
-          <p class="hero__hours" data-hero-intro>
-            <span>Mon–Fri 09:00–17:00</span>
-            <span>Sat 09:00–15:00</span>
-            <span>Sun closed</span>
-          </p>
+          <div class="hero__status" data-hero-intro>
+            <!-- Filled in by src/js/open-status.js -->
+            <span class="open-badge" data-open-status hidden></span>
+            <p class="hero__hours">
+              <span>Mon–Fri 09:00–17:00</span>
+              <span>Sat 09:00–15:00</span>
+              <span>Sun closed</span>
+            </p>
+          </div>
         </div>
 
         <a class="hero__scroll" href="#menu" aria-label="Scroll to the menu" data-hero-intro>
@@ -103,15 +107,98 @@
         </div>
       </section>
 
-      <!-- ==================== Find us (built in step 5) ==================== -->
-      <section class="section section--placeholder" id="find-us" aria-labelledby="find-title">
-        <div class="container section-head section-head--center">
-          <p class="eyebrow">Come say hi</p>
-          <h2 id="find-title">Find us</h2>
-          <p>Coming in step 5.</p>
+      <!-- ==================== Find us ==================== -->
+      <section class="find-us" id="find-us" aria-labelledby="find-title">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Come say hi</p>
+            <h2 id="find-title">Find <span class="text-yellow">us</span></h2>
+            <p>Pop in, give us a call or send a WhatsApp.</p>
+          </div>
+
+          <div class="find-us__grid">
+            <div class="find-us__info">
+              <!-- Address -->
+              <article class="info-card">
+                <span class="info-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+                <div class="info-card__body">
+                  <h3 class="info-card__title">Where</h3>
+                  <p class="info-card__big">36 Joubert St, Mashishing</p>
+                  <p>Next to Dawsons Hardware · 1120</p>
+                  <a class="btn btn--yellow info-card__btn" href="https://www.google.com/maps/search/?api=1&amp;query=36%20Joubert%20St%2C%20Lydenburg%2C%201120%2C%20South%20Africa" target="_blank" rel="noopener">Get directions</a>
+                </div>
+              </article>
+
+              <!-- Phone -->
+              <article class="info-card">
+                <span class="info-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
+                <div class="info-card__body">
+                  <h3 class="info-card__title">Call or WhatsApp</h3>
+                  <a class="info-card__big info-card__phone" href="tel:+27725565736">072 556 5736</a>
+                  <div class="info-card__actions">
+                    <a class="btn btn--red" href="tel:+27725565736">Call</a>
+                    <a class="btn btn--whatsapp" href="https://wa.me/27725565736" target="_blank" rel="noopener">WhatsApp</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Hours (today's row is highlighted by src/js/open-status.js) -->
+              <article class="info-card">
+                <span class="info-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <div class="info-card__body">
+                  <div class="info-card__head">
+                    <h3 class="info-card__title">Opening hours</h3>
+                    <span class="open-badge" data-open-status hidden></span>
+                  </div>
+                  <ul class="hours">
+                    <li class="hours__row" data-days="1,2,3,4,5"><span>Monday – Friday</span><span>09:00 – 17:00</span></li>
+                    <li class="hours__row" data-days="6"><span>Saturday</span><span>09:00 – 15:00</span></li>
+                    <li class="hours__row hours__row--closed" data-days="0"><span>Sunday</span><span>Closed</span></li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <!-- Map (loads only when you scroll near it) -->
+            <div class="find-us__map">
+              <iframe
+                src="https://maps.google.com/maps?q=36%20Joubert%20St%2C%20Lydenburg%2C%201120%2C%20South%20Africa&amp;z=16&amp;output=embed"
+                title="Map showing Tasty's Take Aways on Joubert St"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <a class="find-us__map-link" href="https://www.google.com/maps/search/?api=1&amp;query=36%20Joubert%20St%2C%20Lydenburg%2C%201120%2C%20South%20Africa" target="_blank" rel="noopener">Open in Google Maps</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <!-- ==================== Footer ==================== -->
+    <footer class="site-footer">
+      <div class="container site-footer__top">
+        <a class="site-footer__logo" href="#top" aria-label="Tasty's Take Aways, back to top">
+          <img src="/src/assets/logo/tastys-logo.webp" alt="" width="1386" height="764" loading="lazy" />
+        </a>
+        <p class="site-footer__tagline">Great food. Great vibes. <em>Made with passion!</em></p>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <a href="#menu">Menu</a>
+          <a href="#find-us">Find us</a>
+          <a href="tel:+27725565736">Call</a>
+          <a href="https://wa.me/27725565736" target="_blank" rel="noopener">WhatsApp</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="container site-footer__fine">
+          <p>&copy; <span data-year>2026</span> Tasty's Take Aways. All rights reserved.</p>
+          <p>
+            Website built by
+            <a href="https://www.linkedin.com/in/zafarseepye" target="_blank" rel="noopener">ZSC Web Studio</a>
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>

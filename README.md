@@ -36,6 +36,24 @@ Built by [Zafar Seepye](https://github.com/ZafarSeepye) · ZSC Web Studio.
 
 ---
 
+## Security
+
+The site is static (no database, no logins, no forms, no secrets), which removes most attack types. It was still tested by attacking it:
+
+| Test | Result |
+|---|---|
+| Code injection (XSS) through the menu data, category ids, prices and opening hours | Blocked: all text is escaped or written with `textContent` |
+| Code injection through the page URL (`?q=`, `#...`) | Not possible: the site never reads the URL |
+| A typo in `menu.js` (e.g. `'35'` instead of `35`) | Handled: forgiving price parsing, each section starts on its own |
+| Clickjacking (another site framing ours) | Blocked by `X-Frame-Options` / `frame-ancestors` headers |
+| Dev server file leaks (`/.env`, `/.git`, `/@fs/etc/passwd`, path traversal), foreign Host headers | Blocked by Vite (403) |
+| Dependencies | `npm audit`: 0 vulnerabilities |
+| Secrets / source maps in the build | None |
+
+**Hardening in the build** (`vite.config.js`): a Content Security Policy (only this site's own scripts, styles, fonts and images,
+plus the Google map), a `_headers` file for the host (CSP, `X-Frame-Options: DENY`, `nosniff`, `Referrer-Policy`,
+`Permissions-Policy`, HSTS), no source maps, and no inline scripts. All external links use `rel="noopener"`.
+
 ## Tech
 
 - [Vite](https://vite.dev/) 8 (dev server and build)

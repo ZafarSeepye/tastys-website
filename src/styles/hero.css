@@ -160,14 +160,16 @@
   50% { transform: translateY(5px); }
 }
 
-/* ---------- Hidden until the intro animation plays (JS on, motion allowed) ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  .js .hero__logo,
-  .js .hero__tagline,
-  .js .hero [data-hero-intro] {
+/* ---------- Hidden until the intro animation plays (JS on, motion allowed) ----------
+   "scripting: enabled" means JavaScript is on, without needing an inline script */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .hero__logo,
+  .hero__tagline,
+  .hero [data-hero-intro] {
     visibility: hidden;
   }
 }
+
 
 /* ---------- Phone ---------- */
 @media (max-width: 560px) {

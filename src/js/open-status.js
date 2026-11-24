@@ -72,10 +72,24 @@ function update() {
   document.querySelectorAll('[data-open-status]').forEach((badge) => {
     badge.classList.remove('is-open', 'is-soon', 'is-closed');
     badge.classList.add(`is-${status.state}`);
-    badge.innerHTML = `
-      <span class="open-badge__dot" aria-hidden="true"></span>
-      <span class="open-badge__label">${status.label}</span>
-      ${status.detail ? `<span class="open-badge__detail">· ${status.detail}</span>` : ''}`;
+
+    // Built with textContent (not HTML strings), so nothing in the data can inject code
+    const dot = document.createElement('span');
+    dot.className = 'open-badge__dot';
+    dot.setAttribute('aria-hidden', 'true');
+
+    const label = document.createElement('span');
+    label.className = 'open-badge__label';
+    label.textContent = status.label;
+
+    badge.replaceChildren(dot, label);
+
+    if (status.detail) {
+      const detail = document.createElement('span');
+      detail.className = 'open-badge__detail';
+      detail.textContent = `· ${status.detail}`;
+      badge.append(detail);
+    }
     badge.hidden = false;
   });
 

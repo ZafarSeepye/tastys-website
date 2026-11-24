@@ -23,8 +23,11 @@ import { initMenu } from './js/menu.js';
 import { initOpenStatus } from './js/open-status.js';
 import { initFooter } from './js/footer.js';
 
-initHeader();
-initHero();
-initMenu();
-initOpenStatus();
-initFooter();
+// Start each part on its own, so if one ever fails the rest of the site still works
+[initHeader, initHero, initMenu, initOpenStatus, initFooter].forEach((init) => {
+  try {
+    init();
+  } catch (error) {
+    console.error(`${init.name} failed:`, error);
+  }
+});

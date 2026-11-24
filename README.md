@@ -15,8 +15,8 @@ Built by [Zafar Seepye](https://github.com/ZafarSeepye) · ZSC Web Studio.
 |---|---|---|---|---|
 | 1 | Project setup | Vite project, Git, .gitignore, public GitHub repo, README | Blank site on localhost, first push | ✅ Done |
 | 2 | Brand & design system | Colours and fonts from the Tasty's posters, spacing, buttons, cleaned-up logo | The site's look and feel | ✅ Done |
-| 3 | Header + hero | Logo, Menu / Find us links, hero with the animated Tasty's logo and tagline | A first screen that looks like Tasty's | 🔧 In progress |
-| 4 | Menu | Category tabs, food cards (photo, name, price), daily specials, scroll-in animations. Prices live in one `menu.js` file | The full menu | ⬜ |
+| 3 | Header + hero | Logo, Menu / Find us links, hero with the animated Tasty's logo and tagline | A first screen that looks like Tasty's | ✅ Done |
+| 4 | Menu | Category tabs, food cards (photo, name, price), daily specials, scroll-in animations. Prices live in one `menu.js` file | The full menu | 🔧 In progress |
 | 5 | Find us | Tap-to-call number, address with Google Maps link, opening hours, footer | Contact info (no form) | ⬜ |
 | 6 | Mobile + polish | Phone layouts, compressed photos, accessibility, page title, favicon | Works and loads fast on any phone | ⬜ |
 | 7 | README showcase | Desktop and phone screenshots, features and tech | A GitHub page that shows off the project | ⬜ |
@@ -57,6 +57,14 @@ Built by [Zafar Seepye](https://github.com/ZafarSeepye) · ZSC Web Studio.
 Colours were sampled from the Tasty's logo. All design tokens live in `src/styles/tokens.css`.
 The logo (`src/assets/logo/`) was cut out of a poster, upscaled 3x, cleaned and sharpened.
 The flame was split into its own layer (`tastys-flame.webp`) so it can flicker on top of `tastys-logo-base.webp`.
+
+## Menu
+
+- **One file to edit:** all items and prices live in `src/data/menu.js`. Change a price there and the site updates.
+- **Photos:** items with a photo (`src/assets/menu/`) show as picture cards; the rest show as a price list.
+- **Photo clean-up:** each photo was cropped from the Tasty's posters, cleaned of JPEG noise, upscaled 2x with an
+  AI super-resolution model (EDSR, OpenCV), lightly sharpened and toned down to look more natural.
+- **Daily specials** (curries, bunny chows, samoosas) are marked as varying by day, with a WhatsApp / call button.
 
 ## Run locally
 

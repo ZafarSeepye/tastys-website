@@ -4,14 +4,13 @@
       then the text and buttons slide up.
    2. Idle: the flame flickers and the logo floats gently.
    3. Tap/hover the logo: it wiggles and the flame flares up.
-   4. Embers drift up in the background.
-   5. Scrolling away fades the hero out a little (parallax).
+   4. Scrolling away fades the hero out a little (parallax).
    Everything is skipped for visitors who prefer reduced motion.
    ========================================================================== */
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { prefersReducedMotion, random } from './utils.js';
+import { prefersReducedMotion } from './utils.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,8 +30,6 @@ export function initHero() {
     gsap.set([logo, tagline, ...intro], { autoAlpha: 1 });
     return;
   }
-
-  addEmbers(hero.querySelector('.hero__embers'));
 
   // ---------- Idle loops (created paused, started after the intro) ----------
   const flicker = gsap.to(flame, {
@@ -119,33 +116,15 @@ export function initHero() {
     },
   });
 
-  // Pause the loops and embers when the hero is off screen (saves battery)
+  // Pause the loops when the hero is off screen (saves battery)
   ScrollTrigger.create({
     trigger: hero,
     start: 'top bottom',
     end: 'bottom top',
     onToggle: ({ isActive }) => {
-      hero.classList.toggle('is-paused', !isActive);
       if (tl.isActive()) return;
       flicker.paused(!isActive);
       float.paused(!isActive);
     },
   });
-}
-
-/** Adds small glowing embers that drift upward (pure CSS animation). */
-function addEmbers(container) {
-  if (!container) return;
-  const count = window.innerWidth < 600 ? 12 : 22;
-
-  for (let i = 0; i < count; i++) {
-    const ember = document.createElement('span');
-    ember.className = 'ember';
-    ember.style.setProperty('--x', `${random(2, 98)}%`);
-    ember.style.setProperty('--size', `${random(2, 5).toFixed(1)}px`);
-    ember.style.setProperty('--dur', `${random(7, 13).toFixed(1)}s`);
-    ember.style.setProperty('--delay', `${-random(0, 13).toFixed(1)}s`); // start mid-flight
-    ember.style.setProperty('--drift', `${random(-70, 70).toFixed(0)}px`);
-    container.appendChild(ember);
-  }
 }

@@ -187,6 +187,19 @@
   font-size: 0.7em;
 }
 
+/* "from" in front of a starting price */
+.price__from {
+  margin-right: 0.25em;
+  font-size: 0.55em;
+  text-transform: uppercase;
+}
+
+/* Price that changes daily */
+.price--ask {
+  font-size: var(--text-base);
+  text-transform: uppercase;
+}
+
 .price--yellow {
   color: var(--color-on-yellow);
   background: var(--color-yellow);
@@ -332,18 +345,48 @@
 
 /* ---------- Simple menu list row (for items without photos) ---------- */
 .menu-row {
+  display: grid;
+  gap: var(--space-1);
+  padding-block: var(--space-3);
+  border-bottom: var(--line-thin) dashed var(--color-border-strong);
+}
+
+.menu-row__line {
   display: flex;
   align-items: baseline;
   gap: var(--space-3);
-  padding-block: var(--space-3);
-  border-bottom: var(--line-thin) dashed var(--color-border-strong);
 }
 
 .menu-row__name {
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: var(--weight-bold);
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
+}
+
+.menu-row__desc {
+  font-size: var(--text-sm);
+}
+
+.menu-row__price--ask {
+  font-size: var(--text-base);
+  color: var(--color-red-bright);
+}
+
+/* "With chips R70" / "+R8 mushroom sauce" lines under an item */
+.menu-extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.menu-extras strong {
+  color: var(--color-yellow);
 }
 
 /* Dotted leader between name and price */
@@ -360,4 +403,9 @@
   font-weight: var(--weight-black);
   color: var(--color-yellow);
   white-space: nowrap;
+}
+
+/* ---------- Small helpers ---------- */
+.text-yellow {
+  color: var(--color-yellow);
 }

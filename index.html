@@ -38,10 +38,6 @@
     <main id="main">
       <!-- ==================== Hero ==================== -->
       <section class="hero" id="top" aria-label="Welcome">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="hero__embers"></div>
-        </div>
-
         <div class="container hero__inner">
           <p class="eyebrow" data-hero-intro>36 Joubert St · Mashishing</p>
 
@@ -64,7 +60,7 @@
 
           <p class="hero__text" data-hero-intro>
             Chips, burgers, rolls, kotas, toasted sandwiches, pizza and daily curries. Hot, fresh and
-            <strong>made with passion</strong>.
+            <em>made with passion</em>.
           </p>
 
           <div class="hero__actions" data-hero-intro>
@@ -85,12 +81,25 @@
         </a>
       </section>
 
-      <!-- ==================== Menu (built in step 4) ==================== -->
-      <section class="section section--placeholder" id="menu" aria-labelledby="menu-title">
+      <!-- ==================== Menu ==================== -->
+      <!-- Items and prices come from src/data/menu.js -->
+      <section class="menu" id="menu" aria-labelledby="menu-title">
         <div class="container section-head section-head--center">
           <p class="eyebrow">What's cooking</p>
-          <h2 id="menu-title">Our menu</h2>
-          <p>Coming in step 4.</p>
+          <h2 id="menu-title">Our <span class="text-yellow">menu</span></h2>
+          <p>Hot, fresh and made to order. All prices in Rand.</p>
+        </div>
+
+        <nav class="menu__nav" aria-label="Menu categories">
+          <div class="container">
+            <div class="chips menu__chips"></div>
+          </div>
+        </nav>
+
+        <div class="container menu__body">
+          <noscript>
+            <p>Turn on JavaScript to see the menu, or call us on 072 556 5736.</p>
+          </noscript>
         </div>
       </section>
 
